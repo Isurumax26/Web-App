@@ -80,11 +80,11 @@ public class Product {
 		
 		while(amount > 0) {
 			if(amount >= numUnits) {
-				if(numCarton < 3) {
+				if(numCarton < 2) {
 					total = total + cartonPrice;
 					numCarton = numCarton + 1;
 				}
-				else if(numCarton >= 3){
+				else if(numCarton >= 2){
 					total = total + cartonPrice*0.9;
 				}
 				

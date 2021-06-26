@@ -1,21 +1,57 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <title>home</title> 
+    <title>custom</title> 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <STYLE type="text/css">
+      button { 
+        background: #43ABC9; 
+        margin: 50px 12px 12px 12px;
+        padding: 12px 12px 12px 12px;
+                                     /* No borders set */
+      }
+      input { 
+        color: white;                /* text color is white */ 
+        
+        background:#107896;          /* Content, padding will be blue */
+        margin: 12px 12px 12px 12px;
+        padding: 12px 0px 12px 12px; /* Note 0px padding right */
+        
+      }
+      select{
+		color: white;                /* text color is white */ 
+        background: #107896;           /* Content, padding will be blue */
+        margin: 12px 12px 12px 12px;
+        padding: 12px 0px 12px 12px; /* Note 0px padding right */
+        
+	
+	  }
+	  
+	  p{
+		width: 775px;
+		border: thick;
+    	height: 100px;
+    	display: inline;
+		}
+		
+	  #amt {
+			margin:65px;
+		}
+      
+    </STYLE>
 </head>
 <body>
     <form th:action="@{/custom}" th:object="${product}" method="post">
-	    Number of units <input type="text" th:name="units" th:field="*{amount}" />
-	    Product <select th:name="products"  th:field="*{id}">
-	    			<option value="0" selected disabled hidden>Choose here</option>
-			        <option value=1 th:selected="${id==1}">Penguin-ears</option>
-			        <option value=2 th:selected="${id==2}">Horseshoe</option>
-	    		</select>
-	    <button type="submit" th:name="action" th:value="amt">Calculate</button>
+	    <p>Number of units :</p> <input type="text" th:name="units" th:field="*{amount}" />
+       <p> Product : </p>	<select th:name="products"  th:field="*{id}">
+		    			<option value="0" selected disabled hidden>Choose here</option>
+				        <option value=1 th:selected="${id==1}">Penguin-ears</option>
+				        <option value=2 th:selected="${id==2}">Horseshoe</option>
+		    		</select>
+	    <button type="submit" th:name="action" th:value="amt"> Calculate </button>
 	</form>
 	
-	Amount <input type="text"  th:value="${total}" readonly><br><br>
+	<p>Amount </p> <input id="amt" type="text"  th:value="${total}" readonly><br><br>
 	
 
 </body>

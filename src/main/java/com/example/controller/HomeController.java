@@ -37,7 +37,7 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String homePage(Model model) {
 		tablePrice();
 		//System.out.println(penguEars);
